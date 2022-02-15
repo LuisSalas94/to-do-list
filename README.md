@@ -10,11 +10,6 @@
 - JavaScript
 - Webpack
 
-## Live Demo
-
-[Live Demo Link]()
-
-
 
 ## Authors
 
