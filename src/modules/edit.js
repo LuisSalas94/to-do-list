@@ -15,9 +15,12 @@ export default function editTodo(taskListGet, todosList) {
       textBox.value = firefox[0].innerHTML;
       firefox[1].appendChild(textBox);
       document.querySelector('.text-box').addEventListener('keyup', (event) => {
-        if (event.keyCode === 13) {
-          todosList.forEach((a) => {
-            if (a.id === firefox[0].id) {
+        /* eslint-disable-next-line */
+				if (event.keyCode == 13) {
+          /* eslint-disable-next-line */
+					todosList.forEach((a) => {
+            /* eslint-disable-next-line */
+						if (a.id == firefox[0].id) {
               a.description = textBox.value;
               createTodo(todosList);
               window.location.reload();
@@ -28,3 +31,5 @@ export default function editTodo(taskListGet, todosList) {
     });
   }
 }
+
+export { editTodo };

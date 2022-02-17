@@ -2,7 +2,7 @@ import './style.css';
 
 import createTodo from './modules/createTodo.js';
 import removeTodo from './modules/delete.js';
-import editTodo from './modules/edit.js';
+import { editTodo } from './modules/edit.js';
 
 const todoBtn = document.querySelector('#createTodo');
 const makeTodo = document.querySelector('#newTodo');
