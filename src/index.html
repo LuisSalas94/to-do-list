@@ -16,25 +16,29 @@
 	</head>
 	<body>
 		<div class="container">
-			<div class="head">
-				<h1>Today's To Do</h1>
-				<i class="fa-solid fa-rotate"></i>
-			</div>
-			<form class="form">
-				<div class="form-input">
+			<!-- Section1 -->
+			<section class="create-todo">
+				<div class="todo-head">
+					<h1>Today's To Do</h1>
+					<i class="fa-solid fa-rotate"></i>
+				</div>
+				<div class="todo-body">
 					<input
+						id="newTodo"
 						type="text"
-						class="form-input"
+						name="newTodo"
 						placeholder="Add to your list..."
-					/><i class="fas fa-level-down-alt"></i>
+					/>
+					<button id="createTodo"><i class="fas fa-level-down-alt"></i></button>
 				</div>
-				<hr class="line" />
-				<div class="todos-container">
-					<ul class="todo-container"></ul>
-				</div>
-				<input class="submitBtn" type="submit" value="Clear all completed" />
-			</form>
+			</section>
+
+			<!-- Section2 -->
+			<section class="list-todos">
+				<div class="todos-body"></div>
+				<button class="deleteBtn" id="deleteBtn">Clear all completed</button>
+			</section>
 		</div>
-		<script src="index.js"></script>
+		<script src="index.js" type="module"></script>
 	</body>
 </html>
