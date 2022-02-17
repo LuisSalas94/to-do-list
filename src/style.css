@@ -13,6 +13,11 @@ body {
   align-items: center;
 }
 
+i {
+  font-size: 18px;
+  color: #333;
+}
+
 ::placeholder {
   color: #9c9c9c;
   font-style: italic;
@@ -27,63 +32,47 @@ body {
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
 }
 
-.container .head {
+.create-todo .todo-head {
+  width: 100%;
+  padding: 10px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
   border-bottom: 1px solid #f6f6f6;
 }
 
-.todos-container {
+.create-todo .todo-body {
+  padding: 10px;
   width: 100%;
-}
-
-i {
-  cursor: pointer;
-}
-
-.line {
-  border: 0.5px solid #f6f6f6;
-}
-
-.form .form-input {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.create-todo .todo-body input[type="text"] {
+  width: 100%;
   height: 40px;
-  border: none;
   padding: 5px 10px;
+  border: none;
   outline: none;
 }
 
-.todo-container {
-  width: 100%;
-}
-
-.todo-container li {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin: 10px;
-  position: relative;
-  height: 25px;
-}
-
-.todo-container .todo {
-  width: 100%;
-}
-
-.todo-container li input[type="checkbox"] {
-  margin-right: 8px;
-}
-
-.todo-container li i {
+.todos-body ul li button {
   position: absolute;
-  right: 3%;
+  right: 0.5%;
+  border: none;
+  cursor: pointer;
+  color: #333;
 }
 
-.submitBtn {
+.create-todo .todo-body button {
+  border: none;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.list-todos .deleteBtn {
   width: 100%;
   background-color: #f6f6f6;
   height: 50px;
@@ -93,4 +82,37 @@ i {
   color: #9c9c9c;
   cursor: pointer;
   border-top: 1px solid #f6f6f6;
+}
+
+.line {
+  text-decoration: line-through;
+}
+
+.todos-body ul {
+  width: 100%;
+  padding: 10px;
+}
+
+.todos-body ul li {
+  border-bottom: 1.5px solid #f6f6f6;
+  border-top: 1.5px solid #f6f6f6;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 50px;
+}
+
+.todos-body ul li span {
+  padding-left: 10px;
+  color: #9c9c9c;
+}
+
+.text-box {
+  width: 100%;
+  margin: auto 5% !important;
+}
+
+.todos-body ul li input:focus {
+  background-color: #fff3c3;
 }
