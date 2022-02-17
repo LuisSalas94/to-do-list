@@ -63,6 +63,7 @@ i {
   border: none;
   cursor: pointer;
   color: #333;
+  margin-right: 10px;
 }
 
 .create-todo .todo-body button {
@@ -90,7 +91,7 @@ i {
 
 .todos-body ul {
   width: 100%;
-  padding: 10px;
+  padding: 0;
 }
 
 .todos-body ul li {
@@ -114,5 +115,16 @@ i {
 }
 
 .todos-body ul li input:focus {
+  background-color: #fff3c3;
+}
+
+.input-element {
+  border: none;
+  outline: none;
+  width: 100%;
+  padding-left: 10px;
+}
+
+.change-color {
   background-color: #fff3c3;
 }
