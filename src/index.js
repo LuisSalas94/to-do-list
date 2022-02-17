@@ -19,7 +19,7 @@ todoBtn.addEventListener('click', () => {
   const todoObj = {
     description: value,
     completed: false,
-    id: Math.random().toString(16).slice(2),
+    id: todosList.length + 1,
   };
   todosList.push(todoObj);
   createTodo(todosList);
