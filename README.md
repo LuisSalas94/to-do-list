@@ -10,6 +10,9 @@
 - CSS
 - JavaScript
 - Webpack
+## Live Demo
+
+[Live Demo Link](https://luissalas94.github.io/to-do-list/)
 
 ## Getting Started
 To get a local copy up and running follow these simple example steps.
