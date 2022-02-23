@@ -40,7 +40,7 @@ export default class TodosClass {
     todosList.appendChild(todoItem);
     this.arrange();
     this.remove();
-    this.edit();
+    this.editListener();
     this.addCompletedListener();
     this.setStorage();
   }
@@ -78,7 +78,7 @@ export default class TodosClass {
     );
   }
 
-  edit() {
+  editListener() {
     const editable = document.querySelectorAll('.task-description');
     editable[editable.length - 1].addEventListener('focus', (e) => {
       const index = e.target.parentNode.nextSibling.nextSibling.getAttribute('data-value');
@@ -101,9 +101,7 @@ export default class TodosClass {
     });
 
     editable[editable.length - 1].addEventListener('input', (e) => {
-      const index = e.target.parentNode.nextSibling.nextSibling.getAttribute('data-value');
-      this.list[index].description = e.target.textContent;
-      this.setStorage();
+      this.editTarget(e)
     });
   }
 
@@ -114,6 +112,21 @@ export default class TodosClass {
       this.addCompletedListener(e)
     })
   }
+
+  editTarget(e, taskEdit){
+    if(typeof e === "undefined"){
+      edit(taskEdit)
+    }else{
+     const index = e.target.parentNode.nextSibling.nextSibling.getAttribute('data-value');
+     this.list[index].description = e.target.textContent;
+     this.setStorage();
+    }
+   }
+ 
+   edit(taskEdit){
+   this.list[taskEdit.index].description = taskEdit.description;
+   this.setStorage();
+   }
 
     setComplete(e, taskToSet) {
       if (typeof e === "undefined") {
