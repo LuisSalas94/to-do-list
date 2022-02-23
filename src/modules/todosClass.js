@@ -41,7 +41,7 @@ export default class TodosClass {
     this.arrange();
     this.remove();
     this.edit();
-    this.setAsCompleted();
+    this.addCompletedListener();
     this.setStorage();
   }
 
@@ -107,13 +107,27 @@ export default class TodosClass {
     });
   }
 
-  setAsCompleted() {
+  addCompletedListener() {
     const checker = document.querySelectorAll('.check');
     checker[checker.length - 1].addEventListener('change', (e) => {
       e.target.parentNode.children[1].classList.toggle('checked');
-      const index = e.target.parentNode.parentNode.children[1].getAttribute('data-value');
-      this.list[index].completed = !this.list[index].completed;
-      this.setStorage();
-    });
+      this.addCompletedListener(e)
+    })
+  }
+
+    setComplete(e, taskToSet) {
+      if (typeof e === "undefined") {
+        this.setComplete(taskToSet)
+      } else {
+        const index = e.target.parentNode.parentNode.children[1].getAttribute('data-value');
+          this.list[index].completed = !this.list[index].completed;
+          this.setStorage();
+    }
+  }
+
+  setCompleted(taskToSet) {
+    const index = taskToSet.parentNode.parentNode.parentNode.getAttribute('data-value')
+    this.list[index].completed = !this.list[index].completed;
+    this.setStorage();
   }
 }
