@@ -24,7 +24,7 @@ const clearButton = document.querySelector('.clear-completed');
 
 clearButton.addEventListener('click', () => {
   const ogArray = Todos.list;
-  Todos.list = clear(Todos);
+  Todos.list = clear(Todos.list);
   Todos.setStorage();
   removeElements(ogArray);
 });
