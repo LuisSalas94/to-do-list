@@ -27,7 +27,7 @@ describe('Modify Status function test', () => {
 
 
         todos.create(task)
-         todos.markCompleted(taskToSet)
+         todos.setCompleted(taskToSet)
 
 
          expect(todos.list[0].completed).toBe(true)
