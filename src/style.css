@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: rgb(143, 116, 116);
+  font-size: 1rem;
+}
+
+header {
+  text-align: center;
+  margin-top: 10rem;
+  color: #fff;
+  text-shadow: 0.3rem 1rem 1rem #000;
+}
+
+.todoApp {
+  width: 100%;
+  max-width: 500px;
+  background-color: #fff;
+  text-align: center;
+  box-shadow: 0 10px 30px 0 rgba(0, 0, 0, 0.75);
+  margin: 5rem auto;
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-item {
+  padding: 15px;
+  border-bottom: 1px solid rgb(199, 185, 185);
+}
+
+.todos-list > .flex-item > .container {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.input label {
+  padding-left: 1rem;
+}
+
+.title {
+  text-align: center;
+}
+
+.list-head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-todo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.add-todo .input-task {
+  width: 85%;
+  font-style: italic;
+  border: none;
+  border-bottom: thin solid rgb(199, 185, 185);
+}
+
+.input-task {
+  width: 100%;
+}
+
+.carriageReturn {
+  border-bottom: 1px solid rgb(199, 185, 185);
+  font-size: 2rem;
+  width: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.clear-completed {
+  cursor: pointer;
+  font-size: 1.5rem;
+  background-color: #fff;
+  border: 1px solid rgb(199, 185, 185) ;
+  color: rgb(48, 48, 48);
+  margin-top: 1rem;
+  transition: 0.2s;
+}
+
+.clear-completed:hover {
+  font-size: 1.5rem;
+  background-color: rgb(199, 185, 185);
+  border: 1px solid rgb(190, 114, 114) ;
+  color: rgb(0, 0, 0);
+}
+
+.trash {
+  cursor: pointer;
+}
+
+.task-description {
+  display: inline;
+}
+
+.checked {
+  text-decoration: line-through;
+}
