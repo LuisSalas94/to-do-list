@@ -4,6 +4,10 @@
 > This a To-do app in wich the user can add, remove and edit tasks.
 > The app was build using HTML, CS, JavaScript and Webpack.
 
+![todo](https://user-images.githubusercontent.com/57297709/155598601-64d32c0a-6777-48b3-aaef-cd35de706546.jpg)
+
+
+
 ## Built With
 
 - HTML
