@@ -3,22 +3,8 @@
  */
 import {jest} from '@jest/globals'
 import TodosClass from '../modules/todosClass.js';
-import getTasksLocalStorage from '../__mocks__/getLocalStorage.js';
-import setTasksLocalStorage from '../__mocks__/setLocalStorage.js';
 
-class LocalStorageMock {
-  constructor() {
-    this.store = {};
-  }
 
-  getItem(key) {
-    return this.store[key] || null;
-  }
-
-  setItem(key, value) {
-    this.store[key] = String(value);
-  }
-}
 
 describe('Testing Add', () => {
   
@@ -73,4 +59,3 @@ describe('Testing remove', () => {
   });
 });
 
-global.localStorage = new LocalStorageMock();
