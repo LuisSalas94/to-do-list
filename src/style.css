@@ -65,15 +65,15 @@ header {
   justify-content: space-between;
 }
 
+.input-task {
+  width: 100%;
+}
+
 .add-todo .input-task {
   width: 85%;
   font-style: italic;
   border: none;
   border-bottom: thin solid rgb(199, 185, 185);
-}
-
-.input-task {
-  width: 100%;
 }
 
 .carriageReturn {
@@ -88,7 +88,7 @@ header {
   cursor: pointer;
   font-size: 1.5rem;
   background-color: #fff;
-  border: 1px solid rgb(199, 185, 185) ;
+  border: 1px solid rgb(199, 185, 185);
   color: rgb(48, 48, 48);
   margin-top: 1rem;
   transition: 0.2s;
@@ -97,7 +97,7 @@ header {
 .clear-completed:hover {
   font-size: 1.5rem;
   background-color: rgb(199, 185, 185);
-  border: 1px solid rgb(190, 114, 114) ;
+  border: 1px solid rgb(190, 114, 114);
   color: rgb(0, 0, 0);
 }
 
