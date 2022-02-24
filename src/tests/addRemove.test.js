@@ -1,7 +1,7 @@
 /**
  * @jest-environment jsdom
  */
-import {jest} from '@jest/globals'
+import { jest } from '@jest/globals';
 import TodosClass from '../modules/todosClass.js';
 import getTasksLocalStorage from '../__mocks__/getLocalStorage.js';
 import setTasksLocalStorage from '../__mocks__/setLocalStorage.js';
@@ -21,13 +21,12 @@ class LocalStorageMock {
 }
 
 describe('Testing Add', () => {
-  
   it('New task description inserted in task container is abc', () => {
     const todos = new TodosClass();
     const tasksContainer = [{ description: 'abc', completed: true, index: 0 }];
-    
+
     const result = todos.create(tasksContainer[0]);
-    
+
     expect(result.description).toBe('abc');
   });
 
@@ -43,7 +42,6 @@ describe('Testing Add', () => {
 
 describe('Testing remove', () => {
   it('taskContainer length after deleting the only task, is 0', () => {
-
     document.body.innerHTML = ` <ul class="todos-list flex-container">
         <div class="flex-item" data-value="0">
         <div class="flex-container">

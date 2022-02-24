@@ -101,7 +101,7 @@ export default class TodosClass {
     });
 
     editable[editable.length - 1].addEventListener('input', (e) => {
-      this.editTarget(e)
+      this.editTarget(e);
     });
   }
 
@@ -109,37 +109,37 @@ export default class TodosClass {
     const checker = document.querySelectorAll('.check');
     checker[checker.length - 1].addEventListener('change', (e) => {
       e.target.parentNode.children[1].classList.toggle('checked');
-      this.addCompletedListener(e)
-    })
+      this.addCompletedListener(e);
+    });
   }
 
-  editTarget(e, taskEdit){
-    if(typeof e === "undefined"){
-      edit(taskEdit)
-    }else{
-     const index = e.target.parentNode.nextSibling.nextSibling.getAttribute('data-value');
-     this.list[index].description = e.target.textContent;
-     this.setStorage();
+  editTarget(e, taskEdit) {
+    if (typeof e === 'undefined') {
+      edit(taskEdit);
+    } else {
+      const index = e.target.parentNode.nextSibling.nextSibling.getAttribute('data-value');
+      this.list[index].description = e.target.textContent;
+      this.setStorage();
     }
-   }
- 
-   edit(taskEdit){
-   this.list[taskEdit.index].description = taskEdit.description;
-   this.setStorage();
-   }
+  }
 
-    setComplete(e, taskToSet) {
-      if (typeof e === "undefined") {
-        this.setComplete(taskToSet)
-      } else {
-        const index = e.target.parentNode.parentNode.children[1].getAttribute('data-value');
-          this.list[index].completed = !this.list[index].completed;
-          this.setStorage();
+  edit(taskEdit) {
+    this.list[taskEdit.index].description = taskEdit.description;
+    this.setStorage();
+  }
+
+  setComplete(e, taskToSet) {
+    if (typeof e === 'undefined') {
+      this.setComplete(taskToSet);
+    } else {
+      const index = e.target.parentNode.parentNode.children[1].getAttribute('data-value');
+      this.list[index].completed = !this.list[index].completed;
+      this.setStorage();
     }
   }
 
   setCompleted(taskToSet) {
-    const index = taskToSet.parentNode.parentNode.parentNode.getAttribute('data-value')
+    const index = taskToSet.parentNode.parentNode.parentNode.getAttribute('data-value');
     this.list[index].completed = !this.list[index].completed;
     this.setStorage();
   }
