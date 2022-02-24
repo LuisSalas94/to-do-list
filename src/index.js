@@ -1,6 +1,6 @@
 import './style.css';
 
-import createTodo from './modules/createTodo.js';
+import { createTodo } from './modules/createTodo.js';
 import { removeTodo, deleteTodos } from './modules/delete.js';
 
 const todoBtn = document.querySelector('#createTodo');

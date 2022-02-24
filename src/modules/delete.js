@@ -1,4 +1,4 @@
-import createTodo from './createTodo.js';
+import { createTodo } from './createTodo.js';
 
 export function deleteTodos(deletebtn) {
   deletebtn.addEventListener('click', () => {
@@ -17,7 +17,7 @@ export function deleteTodos(deletebtn) {
 export function removeTodo(deleteTask, todosList) {
   todosList = JSON.parse(localStorage.getItem('to-do'));
   /* eslint-disable-next-line */
-	const index = todosList.findIndex((prop) => prop.id == deleteTask);
+  const index = todosList.findIndex((prop) => prop.id == deleteTask);
   todosList.splice(index, 1);
   createTodo(todosList);
 }

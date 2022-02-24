@@ -1,6 +1,6 @@
 import updateLocalStorage from './checkbox.js';
 
-function changeCompleted(input) {
+export function changeCompleted(input) {
   const tasklist = input.parentElement.children;
   const array = JSON.parse(localStorage.getItem('to-do'));
 
@@ -15,10 +15,10 @@ function changeCompleted(input) {
   }
   localStorage.setItem('to-do', JSON.stringify(array));
   /* eslint-disable-next-line */
-	createTodo(array);
+  createTodo(array);
 }
 
-function modifyTask(spanEle) {
+export function modifyTask(spanEle) {
   const taskChanged = spanEle.parentElement;
   const tasklist = taskChanged.parentElement.children;
   const array = JSON.parse(localStorage.getItem('to-do'));
@@ -30,10 +30,10 @@ function modifyTask(spanEle) {
   }
   localStorage.setItem('to-do', JSON.stringify(array));
   /* eslint-disable-next-line */
-	createTodo(array);
+  createTodo(array);
 }
 
-export default function createTodo(todos) {
+export function createTodo(todos) {
   const todosBody = document.querySelector('.todos-body');
   todosBody.innerHTML = '';
 
@@ -81,14 +81,13 @@ export default function createTodo(todos) {
     spanEle.addEventListener('change', () => {
       modifyTask(spanEle);
     });
-    spanEle.id = todo.id;
 
     const btn = document.createElement('button');
     input.checked = todo.completed;
     li.appendChild(input);
     li.appendChild(spanEle);
     li.appendChild(btn);
-    btn.id = todo.id;
+
     btn.setAttribute('onclick', 'deleteTodo(this.id)');
     btn.innerHTML = '<i class="fa-solid fa-trash"></i>';
     todoUl.appendChild(li);
