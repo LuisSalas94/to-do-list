@@ -2,7 +2,12 @@
  * @jest-environment jsdom
  */
 
-import { createTodo, modifyTask } from './modules/createTodo.js';
+import {
+  createTodo,
+  modifyTask,
+  changeCompleted,
+} from './modules/createTodo.js';
+import { deleteTodos } from './modules/delete.js';
 
 describe('Test edit tasks, if it is completed and the clear completed button', () => {
   test('Test edit function', () => {
@@ -33,5 +38,20 @@ describe('Test edit tasks, if it is completed and the clear completed button', (
     modifyTask(sibling);
     todosList = JSON.parse(localStorage.getItem('to-do'));
     expect(todosList[0].description).toMatch('sometext');
+  });
+
+  test('Test completed tasks', () => {
+    const input = document.getElementById(2);
+    changeCompleted(input.parentElement);
+    const todosList = JSON.parse(localStorage.getItem('to-do'));
+    expect(todosList[1].completed).toBeTruthy();
+  });
+
+  test('Test clear all completed tasks', () => {
+    const btn = document.getElementById('deleteBtn');
+    deleteTodos(btn);
+    btn.click();
+    const todosList = JSON.parse(localStorage.getItem('to-do'));
+    expect(todosList).toHaveLength(1);
   });
 });
