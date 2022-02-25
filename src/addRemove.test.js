@@ -2,14 +2,14 @@
  * @jest-environment jsdom
  */
 
-import createTodo from './modules/createTodo.js';
+import { createTodo } from './modules/createTodo.js';
 import { removeTodo } from './modules/delete.js';
 
 describe('Test for add and remove function', () => {
   test('Add tasks', () => {
     document.body.innerHTML = `
-    <div class="todos-body"></div>
-    `;
+     <div class="todos-body"></div>
+     `;
 
     const todosList = [];
     const todoObj = {
